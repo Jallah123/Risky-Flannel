@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, NSXMLParserDelegate, UISearchBarDelegate
+class ViewController: UIViewController, NSXMLParserDelegate, UISearchBarDelegate, UITableViewDelegate
 {
-    @IBOutlet var tbData : UITableView?
+    @IBOutlet var tbData : UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     
@@ -28,6 +28,7 @@ class ViewController: UIViewController, NSXMLParserDelegate, UISearchBarDelegate
         //http://thetvdb.com/api/983E743A757CA344/series/257655/all
         super.viewDidLoad()
         searchBar.delegate = self
+        tbData.delegate = self
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -42,6 +43,10 @@ class ViewController: UIViewController, NSXMLParserDelegate, UISearchBarDelegate
             }
         })
         task.resume()
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let text = posts.objectAtIndex(indexPath.row).valueForKey("SeriesName") as NSString
     }
     
     override func didReceiveMemoryWarning()
