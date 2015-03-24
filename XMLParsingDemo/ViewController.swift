@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, NSXMLParserDelegate
+class ViewController: UIViewController, NSXMLParserDelegate, UISearchBarDelegate
 {
     @IBOutlet var tbData : UITableView?
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     var parser = NSXMLParser()
     var posts = NSMutableArray()
@@ -19,16 +21,23 @@ class ViewController: UIViewController, NSXMLParserDelegate
     var title1 = NSMutableString()
     var date = NSMutableString()
     
+    
+    
     override func viewDidLoad()
     {
         //http://thetvdb.com/api/983E743A757CA344/series/257655/all
         super.viewDidLoad()
+        searchBar.delegate = self
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        let param = searchBar.text
         let session = NSURLSession.sharedSession()
-        let url = NSURL(string: "http://thetvdb.com/api/GetSeries.php?seriesname=a")
+        let url = NSURL(string: "http://thetvdb.com/api/GetSeries.php?seriesname=" + param)
         let task = session.dataTaskWithURL(url!, completionHandler: {(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
             if let theData = data {
                 dispatch_async(dispatch_get_main_queue(), {
-                   self.beginParsing(data)
+                    self.beginParsing(data)
                 })
             }
         })
