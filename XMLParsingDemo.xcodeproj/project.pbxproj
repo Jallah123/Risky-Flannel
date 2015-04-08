@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D73110201AD5326D00DAF90D /* parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731101F1AD5326D00DAF90D /* parser.swift */; };
+		D73110301AD53DAC00DAF90D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731102F1AD53DAC00DAF90D /* DetailViewController.swift */; };
 		EAE0503C198A4233003255C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0503B198A4233003255C2 /* AppDelegate.swift */; };
 		EAE0503E198A4233003255C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0503D198A4233003255C2 /* ViewController.swift */; };
 		EAE05041198A4233003255C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE0503F198A4233003255C2 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D731101F1AD5326D00DAF90D /* parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parser.swift; sourceTree = "<group>"; };
+		D731102F1AD53DAC00DAF90D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EAE05036198A4233003255C2 /* XMLParsingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMLParsingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE0503A198A4233003255C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAE0503B198A4233003255C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				EAE0503F198A4233003255C2 /* Main.storyboard */,
 				EAE05042198A4233003255C2 /* Images.xcassets */,
 				EAE05039198A4233003255C2 /* Supporting Files */,
+				D731101F1AD5326D00DAF90D /* parser.swift */,
+				D731102F1AD53DAC00DAF90D /* DetailViewController.swift */,
 			);
 			path = XMLParsingDemo;
 			sourceTree = "<group>";
@@ -153,8 +159,9 @@
 		EAE0502E198A4233003255C2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0600;
-				ORGANIZATIONNAME = "TheAppGuruz-New-6";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					EAE05035198A4233003255C2 = {
 						CreatedOnToolsVersion = 6.0;
@@ -208,8 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D73110201AD5326D00DAF90D /* parser.swift in Sources */,
 				EAE0503E198A4233003255C2 /* ViewController.swift in Sources */,
 				EAE0503C198A4233003255C2 /* AppDelegate.swift in Sources */,
+				D73110301AD53DAC00DAF90D /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +338,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = XMLParsingDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XMLParsingDemo;
 			};
 			name = Debug;
 		};
@@ -340,7 +349,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = XMLParsingDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XMLParsingDemo;
 			};
 			name = Release;
 		};
@@ -358,7 +367,7 @@
 				);
 				INFOPLIST_FILE = XMLParsingDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XMLParsingDemoTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -373,7 +382,7 @@
 				);
 				INFOPLIST_FILE = XMLParsingDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XMLParsingDemoTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
