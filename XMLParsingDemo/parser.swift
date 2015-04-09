@@ -11,17 +11,16 @@ import Foundation
 class Parser: NSObject, NSXMLParserDelegate {
 
 var parser = NSXMLParser()
-var series = NSMutableArray()
 var elements = NSMutableDictionary()
 var element = NSString()
-var title1 = NSMutableString()
-var date = NSMutableString()
-var id = NSMutableString()
-
+var tempSerie = Serie()
+var tempEpisode = Episode()
+var series = [Serie]()
+    
 //XMLParser Methods
-func beginParsing(data: NSData) -> (NSMutableArray)
+func beginParsing(data: NSData) -> ([Serie])
 {
-    series = []
+    series = [Serie]()
     parser = NSXMLParser(data: data)
     parser.delegate = self
     parser.parse()
@@ -32,45 +31,34 @@ func beginParsing(data: NSData) -> (NSMutableArray)
 
 func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]!)
 {
-    element = elementName
-    if (elementName as NSString).isEqualToString("Series")
+    element = elementName.lowercaseString
+    if (elementName as NSString).lowercaseString == "series"
     {
         elements = NSMutableDictionary.alloc()
         elements = [:]
-        title1 = NSMutableString.alloc()
-        title1 = ""
-        date = NSMutableString.alloc()
-        date = ""
-        id = NSMutableString.alloc()
-        id = ""
+        tempSerie = Serie()
+    } else if (elementName as NSString).lowercaseString == "episode" {
+        tempEpisode = Episode()
     }
 }
+    
+    func parser(parser: NSXMLParser!, foundCharacters string: String!)
+    {
+        element = element.lowercaseString
+        if element == "seriesname" {
+            tempSerie.name! += string
+        } else if element == "firstaired" {
+            tempSerie.firstAired! += string
+        } else if element == "seriesid" {
+            tempSerie.seriesId! += string
+        }
+    }
 
 func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!)
 {
-    if (elementName as NSString).isEqualToString("Series") {
-        if !title1.isEqual(nil) {
-            elements.setObject(title1, forKey: "SeriesName")
-        }
-        if !date.isEqual(nil) {
-            elements.setObject(date, forKey: "FirstAired")
-        }
-        if !id.isEqual(nil) {
-            elements.setObject(id, forKey: "SeriesID")
-        }
-        series.addObject(elements)
+    if (elementName as NSString).lowercaseString == "series" {
+        series.append(tempSerie)
     }
 }
 
-func parser(parser: NSXMLParser!, foundCharacters string: String!)
-{
-    element = element.lowercaseString
-    if element == "seriesname" {
-        title1.appendString(string)
-    } else if element == "firstaired" {
-        date.appendString(string)
-    } else if element == "seriesid" {
-        id.appendString(string)
-    }
-}
 }

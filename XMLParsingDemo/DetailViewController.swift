@@ -23,17 +23,28 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var status: UILabel!
     var id : String?
     var name : String?
+    var serie: Serie?
+
     
-    @IBAction func saveSerie(sender: AnyObject) {
+    @IBAction func onSave(sender: UIButton) {
     }
-    
-    @IBAction func deleteSerie(sender: AnyObject) {
-        
+    @IBAction func onDelete(sender: UIButton) {
     }
-    
     override func viewDidLoad()
     {
         //http://thetvdb.com/api/983E743A757CA344/series/257655/all
         super.viewDidLoad()
+//        let session = NSURLSession.sharedSession()
+//        let url = NSURL(string: "http://thetvdb.com/api/983E743A757CA344/series/" + self.id! + "/all")
+//        let task = session.dataTaskWithURL(url!, completionHandler: {(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
+//            if let theData = data {
+//                dispatch_async(dispatch_get_main_queue(), {
+//                    self.series = self.parser.beginParsing(data)
+//                    self.tbData.reloadData()
+//                })
+//            }
+//        })
+//        task.resume()
+
     }
 }
