@@ -14,7 +14,7 @@ class Episode {
     var number: Int?
     var firstAired: String?
     var overview: String?
-    var rating: Float?
+    var rating: String?
     var lastUpdated: String?
     var seasonId: Int?
     var seriesId: Int?

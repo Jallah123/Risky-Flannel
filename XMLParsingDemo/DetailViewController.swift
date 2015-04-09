@@ -10,6 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
     required init(coder aDecoder: NSCoder) {
+        parser = Parser()
         super.init(coder: aDecoder)
         //fatalError("init(coder:) has not been implemented")
     }
@@ -21,6 +22,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var summary: UILabel!
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var status: UILabel!
+    var parser: Parser
     var id : String?
     var name : String?
     var serie: Serie?
@@ -34,17 +36,20 @@ class DetailViewController: UIViewController {
     {
         //http://thetvdb.com/api/983E743A757CA344/series/257655/all
         super.viewDidLoad()
-//        let session = NSURLSession.sharedSession()
-//        let url = NSURL(string: "http://thetvdb.com/api/983E743A757CA344/series/" + self.id! + "/all")
-//        let task = session.dataTaskWithURL(url!, completionHandler: {(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
-//            if let theData = data {
-//                dispatch_async(dispatch_get_main_queue(), {
-//                    self.series = self.parser.beginParsing(data)
-//                    self.tbData.reloadData()
-//                })
-//            }
-//        })
-//        task.resume()
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: "http://thetvdb.com/api/983E743A757CA344/series/" + self.id! + "/all")
+        let task = session.dataTaskWithURL(url!, completionHandler: {(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
+            if let theData = data {
+                dispatch_async(dispatch_get_main_queue(), {
+                    let series = self.parser.beginParsing(data)
+                    if series.count != 1 {
+                        return
+                    }
+                    let serie = series[0]
+                })
+            }
+        })
+        task.resume()
 
     }
 }
