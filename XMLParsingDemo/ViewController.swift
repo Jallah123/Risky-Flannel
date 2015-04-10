@@ -7,6 +7,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     @IBOutlet weak var searchBar: UISearchBar!
     var parser: Parser!
     var series: [Serie]!
+    var selectedSerie: Serie?
     
     override func viewDidLoad()
     {
@@ -33,8 +34,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let id = series[indexPath.row].seriesId
-        let name = series[indexPath.row].name
+        selectedSerie = series[indexPath.row]
         
         self.performSegueWithIdentifier("detail", sender: self)
         //TODO new screen
@@ -72,8 +72,8 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
         if (segue.identifier == "detail") {
             var svc = segue!.destinationViewController.topViewController as DetailViewController;
-            svc.id = "test"
-            svc.name = "seriesname"
+            let indexPath = self.tbData.indexPathForSelectedRow()
+            svc.serie = self.series[indexPath!.row]
         }
     }
 }

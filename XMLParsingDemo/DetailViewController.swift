@@ -23,8 +23,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var status: UILabel!
     var parser: Parser
-    var id : String?
-    var name : String?
     var serie: Serie?
 
     
@@ -37,7 +35,9 @@ class DetailViewController: UIViewController {
         //http://thetvdb.com/api/983E743A757CA344/series/257655/all
         super.viewDidLoad()
         let session = NSURLSession.sharedSession()
-        let url = NSURL(string: "http://thetvdb.com/api/983E743A757CA344/series/" + self.id! + "/all")
+        let id = (self.serie!.seriesId as NSString).substringToIndex(self.serie!.seriesId.utf16Count - 1)
+        
+        let url = NSURL(string: "http://thetvdb.com/api/983E743A757CA344/series/" + id + "/all")
         let task = session.dataTaskWithURL(url!, completionHandler: {(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
             if let theData = data {
                 dispatch_async(dispatch_get_main_queue(), {
@@ -45,11 +45,20 @@ class DetailViewController: UIViewController {
                     if series.count != 1 {
                         return
                     }
-                    let serie = series[0]
+                    self.serie = series[0]
+                    self.navigationItem.title = self.serie?.name
+                    self.fillView()
                 })
             }
         })
         task.resume()
-
+    }
+    
+    func fillView() {
+        firstAired.text = firstAired.text?.stringByAppendingString(serie!.firstAired)
+//        firstAired.text = serie?.firstAired
+//        summary.text += serie?.overview
+//        rating.text += serie?.rating
+//        status.text += serie?.status
     }
 }

@@ -10,9 +10,18 @@ import Foundation
 class Serie {
     
     init() {
-      self.name = ""
-      self.seriesId = ""
+        self.name = ""
+        self.seriesId = ""
         self.firstAired = ""
+        self.language = ""
+        self.overview = ""
+        self.rating = ""
+        self.status = ""
+        self.IMDB_ID = ""
+        self.network = ""
+        self.id = ""
+        self.banner = ""
+        
     }
     
     var name: String!
@@ -24,7 +33,7 @@ class Serie {
     var network: String?
     var IMDB_ID: String?
     var seriesId: String!
-    var rating: Float?
+    var rating: String?
     var status: String?
     var Seasons = [Season]()
 }

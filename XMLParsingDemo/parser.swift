@@ -45,12 +45,31 @@ func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespac
     {
         element = element.lowercaseString
         if !episodesBegon {
-            if element == "seriesname" {
+            switch element {
+            case "seriesname":
                 tempSerie.name! += string
-            } else if element == "firstaired" {
+            case "firstaired":
                 tempSerie.firstAired! += string
-            } else if element == "seriesid" {
+            case "seriesid":
                 tempSerie.seriesId! += string
+            case "language":
+                tempSerie.language! += string
+            case "banner":
+                tempSerie.banner! += string
+            case "overview":
+                tempSerie.overview! += string
+            case "network":
+                tempSerie.network! += string
+            case "imdb_id":
+                tempSerie.IMDB_ID! += string
+            case "id":
+                tempSerie.id! += string
+            case "rating":
+                tempSerie.rating! += string
+            case "status":
+                tempSerie.status! += string
+            default:
+                break
             }
         }else {
             switch element {
@@ -71,24 +90,27 @@ func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespac
             case "seriesid":
                 tempEpisode.seriesId? += string.toInt()!
             case "seasonnumber":
-                if series[0].Seasons.count == 0 {
-                    let s = Season()
-                    s.id? += string.toInt()!
-                    series[0].Seasons.append(s)
-                }
-                var seasonExists = false
-                for s in series[0].Seasons {
-                    if s.id == string.toInt()! {
-                        s.episodes.append(tempEpisode)
-                        seasonExists = true
-                    }
-                }
-                if !seasonExists {
-                    let s = Season()
-                    s.id? += string.toInt()!
-                    series[0].Seasons.append(s)
-                    s.episodes.append(tempEpisode)
-                }
+                break
+//                if series[0].Seasons.count == 0 {
+//                    let s = Season()
+//                    s.id? += string.toInt()!
+//                    series[0].Seasons.append(s)
+//                }
+//                var seasonExists = false
+//                for s in series[0].Seasons {
+//                    if s.id == string!.toInt() {
+//                        if string!.toInt() != nil {
+//                            s.episodes.append(tempEpisode)
+//                            seasonExists = true
+//                        }
+//                    }
+//                }
+//                if !seasonExists {
+//                    let s = Season()
+//                    s.id? += string.toInt()!
+//                    series[0].Seasons.append(s)
+//                    s.episodes.append(tempEpisode)
+//                }
             default:
                 return
             }

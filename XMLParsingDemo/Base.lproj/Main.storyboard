@@ -112,49 +112,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Series name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uP-Ph-HEJ">
-                                <rect key="frame" x="16" y="72" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount of seasons : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln7-9u-WBk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Amount of seasons : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln7-9u-WBk">
                                 <rect key="frame" x="16" y="101" width="163" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total episodes : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK4-37-qfe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Total episodes : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK4-37-qfe">
                                 <rect key="frame" x="16" y="130" width="125" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umR-Yu-tnf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Summary : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umR-Yu-tnf">
                                 <rect key="frame" x="16" y="188" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVE-sc-u4k">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Rating : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVE-sc-u4k">
                                 <rect key="frame" x="16" y="217" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc1-Pm-ISz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Status : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc1-Pm-ISz">
                                 <rect key="frame" x="16" y="246" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First aired : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDE-X7-UwE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="First aired : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDE-X7-UwE">
                                 <rect key="frame" x="16" y="159" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqU-TN-B03">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqU-TN-B03">
                                 <rect key="frame" x="16" y="275" width="34" height="30"/>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,7 +157,7 @@
                                     <action selector="onSave:" destination="Vr7-QI-1d0" eventType="touchUpInside" id="o1h-93-cWd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="squ-to-DEJ">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="squ-to-DEJ">
                                 <rect key="frame" x="16" y="305" width="44" height="30"/>
                                 <state key="normal" title="Delete">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -174,13 +168,29 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nc1-Pm-ISz" firstAttribute="leading" secondItem="cqU-TN-B03" secondAttribute="leading" id="DvK-ej-dzS"/>
+                            <constraint firstItem="squ-to-DEJ" firstAttribute="top" secondItem="cqU-TN-B03" secondAttribute="bottom" id="IZ4-fY-FYO"/>
+                            <constraint firstItem="umR-Yu-tnf" firstAttribute="top" secondItem="LDE-X7-UwE" secondAttribute="bottom" constant="8" symbolic="YES" id="Kja-Fh-x0v"/>
+                            <constraint firstItem="jVE-sc-u4k" firstAttribute="top" secondItem="umR-Yu-tnf" secondAttribute="bottom" constant="8" symbolic="YES" id="aCt-1J-Kx9"/>
+                            <constraint firstItem="MK4-37-qfe" firstAttribute="top" secondItem="Ln7-9u-WBk" secondAttribute="bottom" constant="8" symbolic="YES" id="dHg-eM-0eO"/>
+                            <constraint firstItem="LDE-X7-UwE" firstAttribute="top" secondItem="MK4-37-qfe" secondAttribute="bottom" constant="8" symbolic="YES" id="dXc-JU-bhS"/>
+                            <constraint firstItem="cqU-TN-B03" firstAttribute="top" secondItem="Nc1-Pm-ISz" secondAttribute="bottom" constant="8" symbolic="YES" id="ebU-uW-kUd"/>
+                            <constraint firstItem="umR-Yu-tnf" firstAttribute="leading" secondItem="LDE-X7-UwE" secondAttribute="leading" id="g9T-hf-GhC"/>
+                            <constraint firstItem="Ln7-9u-WBk" firstAttribute="leading" secondItem="MK4-37-qfe" secondAttribute="leading" id="gpq-jk-ScA"/>
+                            <constraint firstItem="Nc1-Pm-ISz" firstAttribute="leading" secondItem="jVE-sc-u4k" secondAttribute="leading" id="hGn-As-kF5"/>
+                            <constraint firstItem="MK4-37-qfe" firstAttribute="leading" secondItem="LDE-X7-UwE" secondAttribute="leading" id="jtn-9j-Ioq"/>
+                            <constraint firstItem="MK4-37-qfe" firstAttribute="leading" secondItem="rx0-9u-Xq9" secondAttribute="leadingMargin" id="ops-9h-XVs"/>
+                            <constraint firstItem="cqU-TN-B03" firstAttribute="leading" secondItem="squ-to-DEJ" secondAttribute="leading" id="uZx-OF-OOZ"/>
+                            <constraint firstItem="Nc1-Pm-ISz" firstAttribute="top" secondItem="jVE-sc-u4k" secondAttribute="bottom" constant="8" symbolic="YES" id="uk2-5H-H3x"/>
+                            <constraint firstItem="umR-Yu-tnf" firstAttribute="leading" secondItem="jVE-sc-u4k" secondAttribute="leading" id="xhe-MR-ly1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lcb-bP-ebv"/>
                     <connections>
                         <outlet property="amountOfSeasons" destination="Ln7-9u-WBk" id="0yP-au-u0f"/>
                         <outlet property="firstAired" destination="LDE-X7-UwE" id="UeE-42-Dya"/>
                         <outlet property="rating" destination="jVE-sc-u4k" id="326-9q-w3E"/>
-                        <outlet property="seriesName" destination="7uP-Ph-HEJ" id="bsT-uN-MJL"/>
                         <outlet property="status" destination="Nc1-Pm-ISz" id="wxS-jk-MpX"/>
                         <outlet property="summary" destination="umR-Yu-tnf" id="R0x-gq-Ec3"/>
                         <outlet property="totalEpisodes" destination="MK4-37-qfe" id="0o4-it-66i"/>
