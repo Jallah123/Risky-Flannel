@@ -7,9 +7,10 @@
 //
 
 import Foundation
-class Serie {
+class Serie: NSObject {
     
-    init() {
+    override init() {
+        super.init()
         self.name = ""
         self.seriesId = ""
         self.firstAired = ""
@@ -24,16 +25,17 @@ class Serie {
         
     }
     
-    var name: String!
-    var id: String?
-    var language: String?
-    var banner: String?
-    var overview: String?
-    var firstAired: String!
-    var network: String?
-    var IMDB_ID: String?
-    var seriesId: String!
-    var rating: String?
-    var status: String?
-    var Seasons = [Season]()
+    
+    var name: NSString!
+    var id: NSString?
+    var language: NSString?
+    var banner: NSString?
+    var overview: NSString?
+    var firstAired: NSString!
+    var network: NSString?
+    var IMDB_ID: NSString?
+    var seriesId: NSString!
+    var rating: NSString?
+    var status: NSString?
+//    var Seasons = [Season]()
 }

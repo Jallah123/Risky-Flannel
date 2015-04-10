@@ -13,6 +13,9 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     {
         //http://thetvdb.com/api/983E743A757CA344/series/257655/all
         super.viewDidLoad()
+        
+
+        
         parser = Parser()
         searchBar.delegate = self
         tbData.delegate = self
@@ -71,9 +74,10 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
         if (segue.identifier == "detail") {
-            var svc = segue!.destinationViewController.topViewController as DetailViewController;
+            var svc = segue!.destinationViewController as DetailViewController;
             let indexPath = self.tbData.indexPathForSelectedRow()
             svc.serie = self.series[indexPath!.row]
+            // self.navigationController?.popViewControllerAnimated(true)
         }
     }
 }

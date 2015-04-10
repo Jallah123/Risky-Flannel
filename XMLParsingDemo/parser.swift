@@ -47,27 +47,27 @@ func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespac
         if !episodesBegon {
             switch element {
             case "seriesname":
-                tempSerie.name! += string
+                tempSerie.name = tempSerie.name.stringByAppendingString(string)
             case "firstaired":
-                tempSerie.firstAired! += string
+                tempSerie.firstAired! = tempSerie.firstAired!.stringByAppendingString(string)
             case "seriesid":
-                tempSerie.seriesId! += string
+                tempSerie.seriesId! = tempSerie.seriesId!.stringByAppendingString(string)
             case "language":
-                tempSerie.language! += string
+                tempSerie.language! = tempSerie.language!.stringByAppendingString(string)
             case "banner":
-                tempSerie.banner! += string
+                tempSerie.banner! = tempSerie.banner!.stringByAppendingString(string)
             case "overview":
-                tempSerie.overview! += string
+                tempSerie.overview! = tempSerie.overview!.stringByAppendingString(string)
             case "network":
-                tempSerie.network! += string
+                tempSerie.network! = tempSerie.network!.stringByAppendingString(string)
             case "imdb_id":
-                tempSerie.IMDB_ID! += string
+                tempSerie.IMDB_ID! = tempSerie.IMDB_ID!.stringByAppendingString(string)
             case "id":
-                tempSerie.id! += string
+                tempSerie.id! = tempSerie.id!.stringByAppendingString(string)
             case "rating":
-                tempSerie.rating! += string
+                tempSerie.rating! = tempSerie.rating!.stringByAppendingString(string)
             case "status":
-                tempSerie.status! += string
+                tempSerie.status! = tempSerie.status!.stringByAppendingString(string)
             default:
                 break
             }
