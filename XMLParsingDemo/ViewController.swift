@@ -11,7 +11,6 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     
     override func viewDidLoad()
     {
-        //http://thetvdb.com/api/983E743A757CA344/series/257655/all
         super.viewDidLoad()
         
         parser = Parser()

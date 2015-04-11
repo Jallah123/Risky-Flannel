@@ -1,10 +1,3 @@
-//
-//  DetailViewController.swift
-//  XMLParsingDemo
-//
-//  Created by Jelle van Es on 08/04/15.
-//
-//
 import UIKit
 
 class DetailViewController: UIViewController {
@@ -19,10 +12,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var toastMessage: UITextField!
     @IBOutlet weak var seriesName: UILabel!
-    @IBOutlet weak var amountOfSeasons: UILabel!
-    @IBOutlet weak var totalEpisodes: UILabel!
     @IBOutlet weak var firstAired: UILabel!
-    @IBOutlet weak var summary: UILabel!
     @IBOutlet weak var overview: UITextView!
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var status: UILabel!

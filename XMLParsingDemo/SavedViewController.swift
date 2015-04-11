@@ -12,13 +12,11 @@ class SavedViewController: UIViewController, UISearchBarDelegate, UITableViewDel
     
     override func viewDidLoad()
     {
-        //http://thetvdb.com/api/983E743A757CA344/series/257655/all
         super.viewDidLoad()
         
         searchBar.delegate = self
         tbData.delegate = self
         tbData.dataSource = self
-        loadSeries()
     }
     
     func loadSeries() {
@@ -27,6 +25,8 @@ class SavedViewController: UIViewController, UISearchBarDelegate, UITableViewDel
         if data == nil {
             return
         } else if data?.count == 0 {
+            self.series = [Serie]()
+            tbData.reloadData()
             return
         }
         
@@ -42,6 +42,11 @@ class SavedViewController: UIViewController, UISearchBarDelegate, UITableViewDel
         dispatch_async(dispatch_get_main_queue(), {
             self.tbData.reloadData()
         })
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        println("shown")
+        loadSeries()
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -68,11 +73,9 @@ class SavedViewController: UIViewController, UISearchBarDelegate, UITableViewDel
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
-    //Tableview Methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if(series == nil){
@@ -95,14 +98,11 @@ class SavedViewController: UIViewController, UISearchBarDelegate, UITableViewDel
     }
     
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
-            // show detail
-        
-        
         if (segue.identifier == "SavedDetail") {
-            var svc = segue!.destinationViewController as SavedDetailViewController;
+            var svc = segue!.destinationViewController as SavedDetailViewController
             let indexPath = self.tbData.indexPathForSelectedRow()
+            tbData.deselectRowAtIndexPath(indexPath!, animated: false)
             svc.serie = self.series[indexPath!.row]
-            // self.navigationController?.popViewControllerAnimated(true)
         }
     }
 }
