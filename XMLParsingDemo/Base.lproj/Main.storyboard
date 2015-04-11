@@ -8,7 +8,7 @@
         <!--Series-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="XMLParsingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhereWasI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -106,7 +106,7 @@
         <!--Saved-->
         <scene sceneID="BBV-X8-7ou">
             <objects>
-                <viewController id="2wr-Nn-q0F" customClass="SavedViewController" customModule="XMLParsingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2wr-Nn-q0F" customClass="SavedViewController" customModule="WhereWasI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zQg-rA-rjR"/>
                         <viewControllerLayoutGuide type="bottom" id="isr-Hf-ec1"/>
@@ -176,7 +176,7 @@
         <!--Detail View Controller-->
         <scene sceneID="FAs-V4-mvb">
             <objects>
-                <viewController id="Vr7-QI-1d0" customClass="DetailViewController" customModule="XMLParsingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vr7-QI-1d0" customClass="DetailViewController" customModule="WhereWasI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K8T-eY-Spx"/>
                         <viewControllerLayoutGuide type="bottom" id="hr8-T8-mbx"/>
@@ -284,7 +284,6 @@
                         <outlet property="rating" destination="jVE-sc-u4k" id="326-9q-w3E"/>
                         <outlet property="saveButton" destination="cqU-TN-B03" id="Yli-EK-3WI"/>
                         <outlet property="status" destination="Nc1-Pm-ISz" id="wxS-jk-MpX"/>
-                        <outlet property="summary" destination="umR-Yu-tnf" id="R0x-gq-Ec3"/>
                         <outlet property="toastMessage" destination="p1D-cP-ykZ" id="g9H-6r-7Np"/>
                     </connections>
                 </viewController>
@@ -313,7 +312,7 @@
         <!--Saved Detail View Controller-->
         <scene sceneID="xzI-NL-cWb">
             <objects>
-                <viewController id="967-uE-O64" customClass="SavedDetailViewController" customModule="XMLParsingDemo" sceneMemberID="viewController">
+                <viewController id="967-uE-O64" customClass="SavedDetailViewController" customModule="WhereWasI" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x4t-cd-j0a"/>
                         <viewControllerLayoutGuide type="bottom" id="InC-tD-AMO"/>
