@@ -1,11 +1,3 @@
-//
-//  Serie.swift
-//  XMLParsingDemo
-//
-//  Created by Joris Huijbregts on 09/04/2015.
-//
-//
-
 import Foundation
 class Serie: NSObject {
     
@@ -37,5 +29,4 @@ class Serie: NSObject {
     var seriesId: NSString!
     var rating: NSString?
     var status: NSString?
-//    var Seasons = [Season]()
 }
