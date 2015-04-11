@@ -1,51 +1,68 @@
-    
+
 import UIKit
 
-class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
+class SavedViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource
 {
-    @IBOutlet var tbData : UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     var parser: Parser!
     var series: [Serie]!
-    var selectedSerie: Serie?
+    var originalSeries: [Serie]!
+    
+    @IBOutlet weak var tbData: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad()
     {
         //http://thetvdb.com/api/983E743A757CA344/series/257655/all
         super.viewDidLoad()
         
-        parser = Parser()
         searchBar.delegate = self
         tbData.delegate = self
+        tbData.dataSource = self
+        loadSeries()
     }
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
-        if motion == .MotionShake {
-            self.performSegueWithIdentifier("saved", sender: self)
-            
+    func loadSeries() {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var data = defaults.objectForKey("series") as? [NSString]
+        if data == nil {
+            return
+        } else if data?.count == 0 {
+            return
         }
+        
+        var series = [Serie]()
+        for s in data! {
+            parser = Parser()
+            var xml = s.dataUsingEncoding(NSUTF8StringEncoding)
+            var serie = parser.beginParsing(xml!)
+            series.append(serie[0])
+        }
+        self.series = series
+        self.originalSeries = series
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tbData.reloadData()
+        })
     }
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        let param = searchBar.text
-        let session = NSURLSession.sharedSession()
-        let url = NSURL(string: "http://thetvdb.com/api/GetSeries.php?seriesname=" + param)
-        let task = session.dataTaskWithURL(url!, completionHandler: {(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
-            if let theData = data {
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.series = self.parser.beginParsing(data)
-                    self.tbData.reloadData()
-                })
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        var i = 0
+        series = originalSeries
+        if searchBar.text == "" {
+            tbData.reloadData()
+            return
+        }
+        for s in series {
+            if (s.name.lowercaseString.rangeOfString(searchBar.text) == nil) {
+                series.removeAtIndex(i)
+                i--
             }
-        })
-        task.resume()
+            i++
+        }
+        tbData.reloadData()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedSerie = series[indexPath.row]
-        
-        //self.performSegueWithIdentifier("detail", sender: self)
-        //TODO new screen
+        self.performSegueWithIdentifier("SavedDetail", sender: self)
     }
     
     override func didReceiveMemoryWarning()
@@ -54,7 +71,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
         // Dispose of any resources that can be recreated.
     }
     
-       
+    
     //Tableview Methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -78,13 +95,14 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     }
     
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
-        if segue.identifier == "detail" {
-            var svc = segue!.destinationViewController as DetailViewController;
+            // show detail
+        
+        
+        if (segue.identifier == "SavedDetail") {
+            var svc = segue!.destinationViewController as SavedDetailViewController;
             let indexPath = self.tbData.indexPathForSelectedRow()
             svc.serie = self.series[indexPath!.row]
             // self.navigationController?.popViewControllerAnimated(true)
-        } else if segue.identifier == "saved" {
-            segue!.destinationViewController as SavedViewController;
         }
     }
 }

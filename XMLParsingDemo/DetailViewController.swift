@@ -51,7 +51,6 @@ class DetailViewController: UIViewController {
         series!.append(xml!)
         
         defaults.setValue(series, forKey: "series")
-        defaults.synchronize()
         showMessage("Serie saved")
     }
     @IBAction func onDelete(sender: UIButton) {
@@ -63,11 +62,10 @@ class DetailViewController: UIViewController {
         if series!.count != 0 {
             var i = 0
             for s in series! {
-                if s as NSMutableString == xml! {
+                if s as NSString == xml! {
                     showMessage("Deleted")
                     series!.removeAtIndex(i)
                     defaults.setValue(series, forKey: "series")
-                    defaults.synchronize()
                     return
                 }
                 i++
@@ -118,7 +116,7 @@ class DetailViewController: UIViewController {
         }
     }
     
-    func popToRoot(sender: UIBarButtonItem) {
+    func popToRoot() {
         //self.performSegueWithIdentifier("detail", sender: self)
          self.navigationController?.popViewControllerAnimated(true)
     }
